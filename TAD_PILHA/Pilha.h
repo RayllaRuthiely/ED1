@@ -4,7 +4,7 @@
 typedef struct pilha Pilha;
 
 
-// Função para criar uma pilha
+// Função para as operações da pilha, como criar, empilhar, desempilhar, acessar o elemento do topo, destruir a pilha, verificar o tamanho da pilha e verificar se a pilha está cheia.
 Pilha* criar_pilha();
 bool push(Pilha* p, int valor);
 bool pop(Pilha* p, int *valor);
