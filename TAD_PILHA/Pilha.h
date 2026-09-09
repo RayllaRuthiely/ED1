@@ -4,11 +4,11 @@
 typedef struct pilha Pilha;
 
 Pilha* criar_pilha();
-void inserir(Pilha* p, int valor);
-int remover(Pilha* p);
-void acessar(Pilha* p);
-void destruir_pilha(Pilha* p);
-int tamanho(Pilha* p);
-void cheia(Pilha* p);
+bool push(Pilha* p, int valor);
+bool pop(Pilha* p);
+bool top(Pilha* p);
+bool destroy_stack(Pilha* p);
+bool size(Pilha* p);
+bool is_full(Pilha* p);
 
 #endif

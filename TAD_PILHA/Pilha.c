@@ -1,59 +1,68 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX 100
+#include <stdbool.h>
+#define MAX 10
 #include "Pilha.h"
 
-struct pilha{
-    int elementos[MAX];
+typedef struct{
+    int qtd[MAX];
     int topo;
-    int qtd;
-};
+    unsigned int tamanho;
+} Pilha;
 
-Pilha* criar_pilha(){
+Pilha* push(){
     Pilha* p = (Pilha*) malloc(sizeof(Pilha));
     if(p != NULL){
         p->topo = -1;
-        p->qtd = 0;
+        p->tamanho = 0;
     }
     return p;
 }
 
-void inserir(Pilha* p, int valor){
-    if(p->qtd < MAX){
+bool push(Pilha* p, int valor){
+    if(p->tamanho < MAX){
         p->topo++;
-        p->elementos[p->topo] = valor;
-        p->qtd++;
+        p->qtd[p->topo] = valor;
+        p->tamanho++;
+        return true;
     }
+    return false;
 }
 
-int remover(Pilha* p){
-    if(p->qtd > 0){
-        p->qtd--;
-        return p->elementos[p->topo--];
+bool pop(Pilha* p){
+    if(p->tamanho > 0){
+        p->tamanho--;
+        return true;
     }
-    return -1;
+    return false;
 }
 
-void acessar(Pilha* p){
-    if(p->qtd > 0){
-        printf("Elemento no topo: %d\n", p->elementos[p->topo]);
+bool top(Pilha* p){
+    if(p->tamanho > 0){
+        printf("Elemento no topo: %d\n", p->qtd[p->topo]);
+        return true;
     } else {
         printf("Pilha vazia.\n");
+        return false;
     }
 }
 
-void destruir_pilha(Pilha* p){
-    free(p);
+bool destroy_stack(Pilha* p){
+    if(p != NULL){
+        free(p);
+        return true;
+    }
+    return false;
 }
 
-int tamanho(Pilha* p){
-    return p->qtd;
+int size(Pilha* p){
+    return p->tamanho;
 }
 
-void cheia(Pilha* p){
-    if(p->qtd == MAX){
-        printf("Pilha cheia.\n");
+bool is_full(Pilha* p){
+    if(p->tamanho == MAX){
+        return true;
     } else {
-        printf("Pilha não está cheia.\n");
+        return false;
     }
 }
