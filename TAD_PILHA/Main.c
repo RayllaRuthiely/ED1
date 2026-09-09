@@ -53,11 +53,7 @@ int main(){
                 printf("Tamanho da pilha: %d\n", temp);
                 break;
             case 5:
-                if(is_full(p)){
-                    printf("A pilha está cheia.\n");
-                } else {
-                    printf("A pilha não está cheia.\n");
-                }
+                is_full(p);
                 break;
             case 6:
                 destroy_stack(p);
