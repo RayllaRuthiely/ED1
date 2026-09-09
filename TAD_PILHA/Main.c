@@ -10,6 +10,7 @@ int main(){
     int temp;
 
     while(1){
+        printf("--- Menu da Pilha ---\n");
         printf("\nEscolha uma opçao:\n");
         printf("1. Empilhar\n");
         printf("2. Desempilhar\n");
