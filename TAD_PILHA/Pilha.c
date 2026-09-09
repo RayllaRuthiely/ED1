@@ -20,7 +20,7 @@ Pilha* criar_pilha(){
 }
 
 bool push(Pilha* p, int valor){
-    if(p->tamanho < MAX){
+    if(p != NULL && p->tamanho < MAX){
         p->topo++;
         p->qtd[p->topo] = valor;
         p->tamanho++;
@@ -30,8 +30,9 @@ bool push(Pilha* p, int valor){
 }
 
 bool pop(Pilha* p, int *valor){
-    if(p->tamanho > 0 && p != NULL){
+    if(p != NULL && p->tamanho > 0){
         *valor = p->qtd[p->topo];
+        p->topo--;
         p->tamanho--;
         return true;
     }
@@ -39,7 +40,7 @@ bool pop(Pilha* p, int *valor){
 }
 
 bool top(Pilha* p){
-    if(p->tamanho > 0 && p != NULL){
+    if(p != NULL && p->tamanho > 0){
         printf("Elemento no topo: %d\n", p->qtd[p->topo]);
         return true;
     } else {

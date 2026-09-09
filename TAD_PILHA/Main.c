@@ -8,10 +8,6 @@ int main(){
     int valor, opcao;
     Pilha* p = criar_pilha();
     int temp;
-    while(pop(p, &temp)){
-        printf("Valor desempilhado: %d\n", temp);
-    }
-
 
     while(1){
         printf("\nEscolha uma opçao:\n");
