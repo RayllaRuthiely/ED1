@@ -10,7 +10,7 @@ typedef struct{
     unsigned int tamanho;
 } Pilha;
 
-Pilha* push(){
+Pilha* criar_pilha(){
     Pilha* p = (Pilha*) malloc(sizeof(Pilha));
     if(p != NULL){
         p->topo = -1;
