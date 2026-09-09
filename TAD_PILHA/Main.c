@@ -4,6 +4,7 @@
 #define MAX 10
 #include "Pilha.h"
 
+//A main principal do programa, onde o usuário pode interagir com a pilha, escolhendo as opções do menu para empilhar, desempilhar, acessar o elemento do topo, verificar o tamanho da pilha e verificar se a pilha está cheia.
 int main(){
     int valor, opcao;
     Pilha* p = criar_pilha();
