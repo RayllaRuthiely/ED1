@@ -60,10 +60,10 @@ int size(Pilha* p){
     return p->tamanho;
 }
 
-bool is_full(Pilha* p){
+void is_full(Pilha* p){
     if(p->tamanho == MAX){
-        return true;
+        printf("A pilha está cheia.\n");
     } else {
-        return false;
+        printf("A pilha não está cheia.\n");
     }
 }
