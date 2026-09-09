@@ -9,6 +9,6 @@ bool pop(Pilha* p, int *valor);
 bool top(Pilha* p);
 bool destroy_stack(Pilha* p);
 int size(Pilha* p);
-void is_full(Pilha* p);
+bool is_full(Pilha* p);
 
 #endif
