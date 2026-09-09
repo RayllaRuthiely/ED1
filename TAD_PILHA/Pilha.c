@@ -4,11 +4,11 @@
 #define MAX 10
 #include "Pilha.h"
 
-typedef struct{
+ struct pilha {
     int qtd[MAX];
     int topo;
     unsigned int tamanho;
-} Pilha;
+};
 
 Pilha* criar_pilha(){
     Pilha* p = (Pilha*) malloc(sizeof(Pilha));
