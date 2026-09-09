@@ -29,8 +29,9 @@ bool push(Pilha* p, int valor){
     return false;
 }
 
-bool pop(Pilha* p){
-    if(p->tamanho > 0){
+bool pop(Pilha* p, int *valor){
+    if(p->tamanho > 0 && p != NULL){
+        *valor = p->qtd[p->topo];
         p->tamanho--;
         return true;
     }
@@ -38,7 +39,7 @@ bool pop(Pilha* p){
 }
 
 bool top(Pilha* p){
-    if(p->tamanho > 0){
+    if(p->tamanho > 0 && p != NULL){
         printf("Elemento no topo: %d\n", p->qtd[p->topo]);
         return true;
     } else {
