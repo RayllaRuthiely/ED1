@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <stdbool.h>
 #define MAX 10
 #include "Pilha.h"
@@ -14,8 +13,8 @@ int main(){
     push(p, 3);
 
     int temp;
-    while(pop){
-
+    while(pop(p, &temp)){
+        printf("Valor desempilhado: %d\n", temp);
     }
 
 
@@ -40,7 +39,7 @@ int main(){
                 }
                 break;
             case 2:
-                if(pop(p)){
+                if(pop(p, &valor)){
                     printf("Valor desempilhado com sucesso.\n");
                 } else {
                     printf("Pilha vazia. Não é possível desempilhar.\n");
