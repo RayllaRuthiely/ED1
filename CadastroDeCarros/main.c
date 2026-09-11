@@ -35,7 +35,7 @@ int main(){
 
                 if(carro == id){
                     encontrado = 1;
-                    printf("Carro %d removido do estacionamento principal.\n", id);
+                    printf("Carro %d removido do estacionamento principal, e colocado no estacionamento secundário.\n", id);
                     break;
                 }
                 push(EstacionamentoSecundario, carro);
@@ -51,7 +51,13 @@ int main(){
         }else{
             printf("Underflow.\n");
         }
-
+        char op;
+        printf("Deseja sair do programa? (s para sim, n para nao): ");
+        scanf(" %c", &op);
+        if(op == 's' || op == 'S'){
+            printf("Saindo do programa...\n");
+            exit(0);
+        }
 
     }
 
