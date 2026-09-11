@@ -9,12 +9,12 @@ int main(){
     int id;
     char comando;
 
-    Pilha* EstacionamentoPrincipal = criarPilha();
-    Pilha* EstacionamentoSecundario = criarPilha();
+    Pilha* EstacionamentoPrincipal = criar_pilha();
+    Pilha* EstacionamentoSecundario = criar_pilha();
 
 
     while(1){
-        printf("Coloque o comado e o id do carro (ex: i x para inserir o carro x, r x para remover o carro x, s para sair):\n");
+        printf("Coloque o comado e o id do carro: ");
         scanf(" %c %d", &comando, &id);
 
         if(comando == 0 && id == 0){
@@ -41,11 +41,12 @@ int main(){
                 push(EstacionamentoSecundario, carro);
             
             }
-            if(encontrado){
+            if(!encontrado){
                 while(size(EstacionamentoSecundario) > 0){
                     pop(EstacionamentoSecundario, &carro);
                     push(EstacionamentoPrincipal, carro);
                 }
+                printf("Carro %d nao encontrado no estacionamento principal.\n", id);
             }
         }else{
             printf("Underflow.\n");
