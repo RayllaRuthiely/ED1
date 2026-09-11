@@ -35,7 +35,7 @@ int main(){
 
                 if(carro == id){
                     encontrado = 1;
-                    printf("Carro %d removido do estacionamento principal, e colocado no estacionamento secundário.\n", id);
+                    printf("Carro %d removido do estacionamento principal, e colocado no estacionamento secundario.\n", id);
                     break;
                 }
                 push(EstacionamentoSecundario, carro);
