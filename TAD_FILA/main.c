@@ -3,6 +3,15 @@
 #include "fila.h"
 #define MAX 10
 
+void limpaFila(Fila* fila) {
+    if(!filaVaziaOuCheia(fila)) {
+        Transacao transacao;
+        while(desenfileirar(fila, &transacao)) {
+            printf("Desenfileirando transação:\n");
+            imprimirTransacao(transacao);
+        }
+    }
+}
 int main(){
 
     Fila* fila = criarFila(MAX);
@@ -24,7 +33,7 @@ int main(){
             return 0;
         } 
         if(tamanhoFila(fila) == buffer_tamanho){
-            liberarFila(fila);
+            limpaFila(fila);
         }
     }
     liberarFila(fila);
