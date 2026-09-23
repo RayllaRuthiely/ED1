@@ -5,10 +5,10 @@
 
 int main(){
 
+    Fila* fila = criarFila(MAX);
     unsigned int buffer_tamanho;
     scanf("%u", &buffer_tamanho);
 
-    Fila* fila = criarFila(buffer_tamanho);
     if(fila == NULL){
         printf("Erro ao criar a fila.\n");
         return 1;
@@ -19,11 +19,12 @@ int main(){
         if(transacao.contaOrigem == 0 && transacao.contaDestino == 0 && transacao.valor == 0.0){
             break; // Sair do loop se a transação for 0 0 0.0
         }
-        if(enfileirar(fila, transacao)){
-            continue;
-        } else {
+        if(!enfileirar(fila, transacao)){
+            puts("Fila cheia. Desenfileirando a transação mais antiga.");
+            return 0;
+        } 
+        if(tamanhoFila(fila) == buffer_tamanho){
             liberarFila(fila);
-            enfileirar(fila, transacao);
         }
     }
     liberarFila(fila);
