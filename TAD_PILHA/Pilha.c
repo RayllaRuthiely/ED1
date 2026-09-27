@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 #define MAX 10
 #include "Pilha.h"
 
@@ -73,7 +72,9 @@ int size(Pilha* p){
 bool is_full(Pilha* p){
     if(p->tamanho == MAX){
         printf("A pilha esta cheia.\n");
+        return true;
     } else {
         printf("A pilha nao esta cheia.\n");
+        return false;
     }
 }
