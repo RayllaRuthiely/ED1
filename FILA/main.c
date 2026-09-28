@@ -10,9 +10,17 @@ int main(){
     }
     printf("Fila: ");
     imprimir(f);
+    acessar(f);
+    printf("Elemento no inicio da fila: %d\n", acessar(f));
+
     int guardado;
     remover(f, &guardado);
+    printf("Fila apos remover o elemento: ");
+    imprimir(f);
     printf("Valor removido: %d\n", guardado);
+
+    tamanho(f);
+    printf("Tamanho da fila: %d\n", tamanho(f));
 
     destruir(f);
 
