@@ -11,5 +11,6 @@ bool acessar(Fila* f);
 bool destruir(Fila* f);
 int tamanho(Fila* f);
 bool cheiaVazio(Fila* f);
+bool imprimir(Fila* f);
 
 #endif

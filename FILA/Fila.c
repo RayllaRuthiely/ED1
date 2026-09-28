@@ -70,3 +70,17 @@ bool cheiaVazio(Fila* f){
         return false;
     }
 }
+
+bool imprimir(Fila* f){
+    if(f!= NULL && f->tamanho > 0){
+        int i = f->inicio;
+        printf("[ ");
+        for(int j = 0; j < f->tamanho; j++){
+            printf("%d ", f->qtd[i]);
+            i = (i + 1) % MAX;
+        }
+        printf("]\n");
+        return true;
+    }
+    return false;
+}
